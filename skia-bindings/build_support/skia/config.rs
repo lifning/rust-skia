@@ -345,9 +345,13 @@ pub fn configure_skia(
         .collect::<Vec<String>>()
         .join(" ");
 
+    // HACK!
+    let gn_command = PathBuf::from("/usr/local/bin/gn");
+    /*
     let gn_command = gn_command
         .map(|p| p.to_owned())
         .unwrap_or_else(|| build.skia_source_dir.join("bin").join("gn"));
+    */
 
     println!("Skia args: {}", &gn_args);
 
